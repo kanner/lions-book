@@ -1043,7 +1043,7 @@ Note also that in the expression
          register dev, maj;
          rip = ip;
          dev = rip->i_addr[0];
-         maj = rip->i_addr[0].d major;
+         maj = rip->i_addr[0].d_major;
          switch (rip->i_mode&IFMT) {
 
          case IFCHR:
