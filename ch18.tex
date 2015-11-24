@@ -537,10 +537,10 @@ which calls ``rdwr''.
   5743 u.u_base = u.u_arg[0];
   5744 u.u_count = u.u_arg[1];
   5745 u.u_segflg = 0;
-  5751 u.u_offset[1] = f2->f offset[1];
-  5752 u.u_offset[0] = fp->f offset[0];
+  5751 u.u_offset[1] = f2->f_offset[1];
+  5752 u.u_offset[0] = fp->f_offset[0];
   5754 readi(fp->f inode);
-  5756 dpadd(fp->f offset,
+  5756 dpadd(fp->f_offset,
               u.u_arg[1]-u.u_count);
 \end{verbatim}
 
