@@ -431,7 +431,7 @@ UPM at this point.)
  carried away when he declared all
  the parameters for this procedure. In fact the procedure
  body only contains references to
- ``xl'' and ``fmt''.
+ ``x1'' and ``fmt''.
 \ed
 
 
@@ -445,7 +445,7 @@ numbers of parameters.
 Parameters are placed on the stack in
 {\bf reverse} order. Thus when ``printf'' is
 called ``fmt'' will be nearer to the ``top
-of stack'' than ``xl'', etc.
+of stack'' than ``x1'', etc.
 
 \begin{verbatim}
         |   .   |
@@ -458,7 +458,7 @@ of stack'' than ``xl'', etc.
         ---------
         |  x2   |
         ---------
-        |  xl   |
+        |  x1   |
         ---------
         |  fmt  |
         ---------
@@ -466,7 +466,7 @@ of stack'' than ``xl'', etc.
         ---------
 \end{verbatim}
 
-``xl'' has a higher address then ``fmt''
+``x1'' has a higher address then ``fmt''
 but a lower address then ``x2'', because
 stacks grow downwards on the PDP11.
 
@@ -481,10 +481,10 @@ stacks grow downwards on the PDP11.
 The difference is that here the
 value of ``fmt'' cannot be changed;
 
-\item[2346:] ``adx'' is set to point to ``xl''.
- The expression ``\&xl'' is the
- address of ``xl''. Note that since
- ``xl'' is a stack location, this
+\item[2346:] ``adx'' is set to point to ``x1''.
+ The expression ``\&x1'' is the
+ address of ``x1''. Note that since
+ ``x1'' is a stack location, this
  expression cannot be evaluated at
  compile time.
 
