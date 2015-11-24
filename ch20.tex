@@ -493,7 +493,7 @@ free  list by ``alloc'' at the request of
 ``bmap''.  Storage blocks are returned to
 the  free  list by ``free'' at the behest
 of ``itrunc'' (which is called by ``core'',
-``openl'' and ``iput'').
+``open1'' and ``iput'').
 
 
 Entries in the FSV ``inode''  tables  are
@@ -602,7 +602,7 @@ entries in the list to be copied;
 \sbs{itrunc (7414)}
 
 This  procedure  is  called  by  ``core''
-(4112),   ``openl''   (5825)  and  ``iput''
+(4112),   ``open1''   (5825)  and  ``iput''
 (7353). In the  first  two  cases,  the
 contents  of the ``file'' are about to be
 replaced.  In the third case, the  file
