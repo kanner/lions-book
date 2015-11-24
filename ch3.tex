@@ -865,7 +865,7 @@ example will demonstrate.
        {
          register struct proc *p;
          for (p=proc;p<&proc[NPROC];p++)
-           if (p->p ttyp == tp)
+           if (p->p_ttyp == tp)
              psignal (p,sig);
        }
 \end{verbatim}
