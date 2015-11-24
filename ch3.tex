@@ -522,7 +522,7 @@ efficiently as
          register struct buf bp;
          bp = abp;
          if (bp->b flags & B_ERROR)
-           if ((u.u_error=bp->b_error)==0)
+           if ((u.u_error = bp->b_error)==0)
              u.u_error = EIO;
        }
 \end{verbatim}
@@ -555,7 +555,7 @@ Thus if there has been an error, the
 expression
 
 \begin{verbatim}
-    (u.u_error) = bp->b_error)
+    (u.u_error = bp->b_error)
 \end{verbatim}
 
 \noindent is evaluated and compared with zero.
