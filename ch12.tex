@@ -346,7 +346,7 @@ seems to function mainly as a
 convenient temporary storage
 location;
 
-\item[2771:] ``trapl'' is called with the
+\item[2771:] ``trap1'' is called with the
  address of the desired system
  routine. Note the comment beginning on line 2828;
 
@@ -366,7 +366,7 @@ II of the UPM.
 
 The procedures which handle the system
 calls are found mostly in the files
-``sysl.c'', sys2.c``, sys3.c'' and
+``sys1.c'', sys2.c``, sys3.c'' and
 ``sys4.c''.
 
 Two important ``trivial'' procedures are
@@ -374,7 +374,7 @@ Two important ``trivial'' procedures are
 which are found in the file ``trap.c''.
 
 
-\sbs{The File `sysl.c'}
+\sbs{The File `sys1.c'}
 
 This file contains the procedures for
 five system calls, of which three will
@@ -573,7 +573,7 @@ occupied by the stack.
 \ed
 
 The following procedures which are also
-contained in ``sysl.c'' are described in
+contained in ``sys1.c'' are described in
 Chapter 13:
 
 \begin{verbatim}

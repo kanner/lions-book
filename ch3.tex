@@ -1,5 +1,5 @@
 %
-% The Lion's Commentary, file ch3.tex, version 1.5, 18 May 1994
+% The Lion's Commentary, file ch3.tex, version 1.6, 24 Nov 2015
 %
 \se{Reading ``C'' Programs}
 
@@ -444,7 +444,7 @@ The first of these could be rewritten
 more simply as
 
 \begin{verbatim}
-    if (p->p wchan == c) setrun (p);
+    if (p->p_wchan == c) setrun (p);
 \end{verbatim}
 
 \noindent i.e. the brackets are superfluous in
@@ -522,7 +522,7 @@ efficiently as
          register struct buf bp;
          bp = abp;
          if (bp->b flags & B_ERROR)
-           if ((u.u_error=bp->b_error)==0)
+           if ((u.u_error = bp->b_error)==0)
              u.u_error = EIO;
        }
 \end{verbatim}
@@ -555,7 +555,7 @@ Thus if there has been an error, the
 expression
 
 \begin{verbatim}
-    (u.u_error) = bp->b_error)
+    (u.u_error = bp->b_error)
 \end{verbatim}
 
 \noindent is evaluated and compared with zero.
@@ -865,7 +865,7 @@ example will demonstrate.
        {
          register struct proc *p;
          for (p=proc;p<&proc[NPROC];p++)
-           if (p->p ttyp == tp)
+           if (p->p_ttyp == tp)
              psignal (p,sig);
        }
 \end{verbatim}
@@ -1043,7 +1043,7 @@ Note also that in the expression
          register dev, maj;
          rip = ip;
          dev = rip->i_addr[0];
-         maj = rip->i_addr[0].d major;
+         maj = rip->i_addr[0].d_major;
          switch (rip->i_mode&IFMT) {
 
          case IFCHR:
@@ -1070,12 +1070,12 @@ The declaration for ``d\_major'' is
 
 
 \noindent so that the value assigned to ``maj''  is
-the   hiqh  order  byte  of  the  value
+the   high  order  byte  of  the  value
 assigned to ``dev''.
 
 
 In this example, the ``switch'' statement
-has  onlv  two  non-null  cases, and no
+has  only  two  non-null  cases, and no
 ``default''.  The actions for the  recognised cases, e.g.
 
 \begin{verbatim}

@@ -25,7 +25,7 @@ directory files.
 Each file must have at least one  name.
 A file may have more than one  distinct
 name, but the  same  name  may  not  be
-shared  by  tw  distinct  files,  i.e.
+shared  by  two  distinct  files,  i.e.
 each name must define a unique file.
 
 
@@ -45,7 +45,7 @@ belong to the same user, etc.
 Users make initial reference  to  files
 by  quoting  the file name, e.g. in the
 ``open''  system  call.    An   important
-operating  sysem function is to decode
+operating  system function is to decode
 the name into the corresponding ``inode''
 entry.   To  do  this, UNIX creates and
 maintains a directory  data  structure.
@@ -62,7 +62,7 @@ be obtained from a tree  by  coalescing
 one or more groups of leaves.
 
 In this case, while there is still only
-one path between the root and any interior node, thee may be more  than  one
+one path between the root and any interior node, there may be more  than  one
 path  between  the  root  and  a  leaf.
 Leaves are nodes without successors and
 correspond to  data  files.  Interior
@@ -184,7 +184,7 @@ no longer locked;
       the pathname, i.e. ``c==`\verb+\+0' '';
 
       \item[(b)] the file is to be created,
-      i.e. ``flag == 1''; ard
+      i.e. ``flag == 1''; and
 
       \item[(c)] the user program has ``write''
       permission for the directory;
@@ -198,7 +198,7 @@ no longer locked;
       directory entry has previously
       been encountered (7642), store
       the value in ``u.u\_offset[1]'';
-      else set the ``IUPD'' fIag for the
+      else set the ``IUPD'' flag for the
       ``dp'' designated ``inode'' (but why?);
 
 \item[7622:] When appropriate, read a new
@@ -242,7 +242,7 @@ program has ``write'' access to the
 directory, then return a  pointer
 to the directory ``inode'';
 
-Save  the  device  identity  temporarily (why not in the register
+\item[7662:] Save  the  device  identity  temporarily (why not in the register
 ``c''?) and call ``iput''  (7344)  to
 unlock  ``dp'',  to  decrement  the
 reference count on  ``dp''  and  to
@@ -446,7 +446,7 @@ directory file.)
 The procedure assumes that  the  directory  file  has  already been searched,
 that the ``inode'' for the dlrectory file
 has already been allocated and that the
-values of ``u.u offset''  have  been  set
+values of ``u.u\_offset''  have  been  set
 appropriately.
 
 \sbs{maknode (7455)}
@@ -528,7 +528,7 @@ the super-user.
 
 This  procedure  is  called  by  ``exec''
 (3041),  ``chdir'' (3552), ``core'' (4109),
-``openl'' (5815,  5817),  ``namei''  (7563,
+``open1'' (5815,  5817),  ``namei''  (7563,
 7664,  7658) to check access permission
 to  a  file.  The   second   parameter,
 ``mode'',  is  equal  to  one of ``IEXEC'',
@@ -543,7 +543,7 @@ of 0100, 0200 and 0400 respectively.
       functioning as the  text  segment
       for an executing program;
 
-\item[6763:] the suer-user may not execute  a
+\item[6763:] the super-user may not execute  a
 file unless it is ``executable'' in
 at least one of the  three  ``permission''  groups.  In  any  other
 situation he  is  always  allowed

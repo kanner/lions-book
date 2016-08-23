@@ -1,5 +1,5 @@
 %
-% The Lion's Commentary, file ch4.tex, version 1.4, 18 May 1994
+% The Lion's Commentary, file ch4.tex, version 1.5, 24 Nov 2015
 %
 \se{An Overview}
 
@@ -98,7 +98,7 @@ versions of the program files together
 to match up the different declarations
 for the same variable.
 
-\sbs{The `C' Preprocessor}
+\sbs{The ``C'' Preprocessor}
 
 
 If global declarations must be repeated
@@ -213,7 +213,7 @@ other structures.
 The sets of values for the first two
 elements, ``p\_stat'' and ``p\_flag''
 have individual names which are
-define.
+defined.
 
 
 \item[user.h] [Sheet 04; Chapter 7] contains 
@@ -350,7 +350,7 @@ is used by ``trap'' to associate the
 appropriate kernel mode routine with
 each system call type.
 
-\item[sysl.c] [Sheets 30..33; Chapters 12,
+\item[sys1.c] [Sheets 30..33; Chapters 12,
 13] contains various routines associated 
 with system calls, including
 ``exec'' ``exit'' ``wait'' and ``fork''.
@@ -368,7 +368,7 @@ housekeeping and basic accounting.
 
 \item[sig.c] [Sheets 39..42; Chapter 13]
 contains the procedures which handle
-``signals'' or ``software interrupts''
+``signals'' or ``software interrupts''.
 These provide facilities for interprocess 
 communication and tracing.
 \ed
@@ -402,7 +402,7 @@ the shared text segments.
 \item[buf.h] [Sheet 45; Chapter 15] defines
 the ``buf'' structure and array, the
 structure ``devtab'' and names for
-the values of ``b\_error'' All these
+the values of ``b\_error''. All these
 are needed for the management of the
 large (512 byte) buffers.
 
@@ -484,7 +484,7 @@ of processes to files.
 19] contains a set of routines associated
 with system calls including
 ``read'', ``write'', ``creat'', ``open'' and
-``close''
+``close''.
  
 \item[sys3.c] [Sheets 60, 61; Chapters 19, 20]
 contains a set of routines associated

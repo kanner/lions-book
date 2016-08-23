@@ -204,7 +204,7 @@ second  file  name.   (Note   that
 
 \item[6103:] Search the ``mount'' table  looking
   for      an      empty      entry
-  (``mp-$>$m bufp==NULL'') or an  entry
+  (``mp-$>$m\_bufp==NULL'') or an  entry
   already   made  for  the  device.
   (The ``mount''  data  structure  is
   defined at line 0272);
@@ -493,7 +493,7 @@ free  list by ``alloc'' at the request of
 ``bmap''.  Storage blocks are returned to
 the  free  list by ``free'' at the behest
 of ``itrunc'' (which is called by ``core'',
-``openl'' and ``iput'').
+``open1'' and ``iput'').
 
 
 Entries in the FSV ``inode''  tables  are
@@ -576,7 +576,7 @@ of a file.
       in   the  ``super  block''  is  now
       empty,  then   the   block   just
       located    will    contain    the
-      addresses of the  next  group  of
+      addresses of the  next  group  of blocks.
 
 \item[6972:] Set ``s\_flock'' to delay any  other
   process from getting a ``no space''
@@ -602,7 +602,7 @@ entries in the list to be copied;
 \sbs{itrunc (7414)}
 
 This  procedure  is  called  by  ``core''
-(4112),   ``openl''   (5825)  and  ``iput''
+(4112),   ``open1''   (5825)  and  ``iput''
 (7353). In the  first  two  cases,  the
 contents  of the ``file'' are about to be
 replaced.  In the third case, the  file
@@ -741,7 +741,7 @@ locked  (using  ``s\_ilock'') the information is simply discarded.
 \sbs{iupdat (7374)}
 
 
-This procedure  is  called  by ``statl''
+This procedure  is  called  by ``stat1''
 (6050),   ``update''  (7226)  and  ``iput''
 (7357) to revise a  particular  ``inode''
 entry  on a FSV. It does nothing if the

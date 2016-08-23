@@ -13,11 +13,14 @@ TEX	=	ch1.tex ch10.tex ch11.tex ch12.tex ch13.tex ch14.tex ch15.tex \
 
 all:	lionc.pdf
 
-pdf lionc.pdf: lionc.ps
-	ps2pdf lionc.ps
+pdf: lionc.pdf
 
 lionc.ps: lionc.dvi
 	dvips lionc.dvi -o lionc.ps
+
+lionc.pdf: ${SRC}
+	pdflatex lionc.tex
+	pdflatex lionc.tex
 
 lionc.dvi: ${SRC}
 	latex lionc.tex
